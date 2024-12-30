@@ -1,0 +1,28 @@
+### Get all products
+GET http://localhost:8080/Products
+
+### Get product by id
+GET http://localhost:8080/Products/1
+
+### Create product
+POST http://localhost:8080/Products
+Content-Type: application/json
+
+{
+  "name": "Product2",
+  "price": 15.00,
+  "quantity": 30
+}
+
+### Update product
+PUT http://localhost:8080/Products/1
+Content-Type: application/json
+
+{
+  "name": "ProductUpdated",
+  "price": 15.00,
+  "quantity": 30
+}
+
+### Delete product by id
+DELETE http://localhost:8080/Products/2
