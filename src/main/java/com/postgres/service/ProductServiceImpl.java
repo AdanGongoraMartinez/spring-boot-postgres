@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
 
 import com.postgres.model.Product;
 import com.postgres.repo.ProductRepo;
 
 import jakarta.transaction.Transactional;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
