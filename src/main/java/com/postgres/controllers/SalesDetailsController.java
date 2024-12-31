@@ -40,7 +40,7 @@ public class SalesDetailsController {
 
     @GetMapping("/sales/{id}")
     public List<SalesDetails> getSalesDetailsBySalesId(@PathVariable Long id) {
-        return salesDetailsRepo.findAllBySalesId(id);
+        return salesDetailsRepo.findAllBySaleId(id);
     }
 
     @PostMapping
@@ -56,5 +56,7 @@ public class SalesDetailsController {
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Sales Details not found with id: " + id));
         salesDetails.setSale(salesDetailsNew.getSale());
+        // TODO
+        return ResponseEntity.ok(salesDetails);
     }
 }

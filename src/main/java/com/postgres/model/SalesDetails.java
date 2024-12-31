@@ -8,10 +8,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "sales_details")
 public class SalesDetails {
 
@@ -23,6 +25,7 @@ public class SalesDetails {
     @JoinColumn(name = "id_sales", nullable = false)
     private Sale sale;
 
+    @ManyToOne
     @JoinColumn(name = "id_product", nullable = false)
     private Product product;
 
