@@ -42,7 +42,8 @@ public class ProductController {
         } catch (DataAccessException ex) {
             // Database error
             // Register error in logs
-            LoggerFactory.getLogger(ProductController.class).error("Error al acceder a los datos", ex);
+            LoggerFactory.getLogger(ProductController.class)
+                    .error("Unexpected error ocured", ex);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Collections.emptyList());
         }
@@ -54,7 +55,8 @@ public class ProductController {
             Product product = productServiceImpl.findById(id);
             return ResponseEntity.ok(product); // 200 OK
         } catch (NoSuchElementException ex) {
-            LoggerFactory.getLogger(ProductController.class).error("Product not found with id: " + id, ex);
+            LoggerFactory.getLogger(ProductController.class)
+                    .error("Product not found with id: " + id, ex);
             return ResponseEntity.notFound().build(); // 404 Not Found
         } catch (Exception ex) {
             // Unexpected error
@@ -76,7 +78,8 @@ public class ProductController {
             Product savedProduct = productServiceImpl.save(product);
 
             // Return 201 Created with the saved product
-            return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct);
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(savedProduct);
         } catch (DataIntegrityViolationException ex) {
             // Log errors related to database constraints
             LoggerFactory.getLogger(ProductController.class)
