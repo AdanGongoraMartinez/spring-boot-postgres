@@ -13,4 +13,6 @@ public interface SalesDetailsService {
     public SalesDetails findById(Long id);
 
     public void delete(SalesDetails salesDetails);
+
+    List<SalesDetails> findAllBySaleId(Long saleId);
 }

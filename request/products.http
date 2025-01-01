@@ -9,9 +9,9 @@ POST http://localhost:8080/Products
 Content-Type: application/json
 
 {
-  "name": "Product2",
+  "name": "Product1",
   "price": 15.00,
-  "quantity": 30
+  "stock": 30
 }
 
 ### Update product
@@ -21,8 +21,8 @@ Content-Type: application/json
 {
   "name": "ProductUpdated",
   "price": 15.00,
-  "quantity": 30
+  "stock": 30
 }
 
 ### Delete product by id
-DELETE http://localhost:8080/Products/2
+DELETE http://localhost:8080/Products/1

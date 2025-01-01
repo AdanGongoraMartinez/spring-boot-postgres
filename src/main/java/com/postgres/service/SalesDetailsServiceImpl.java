@@ -41,4 +41,10 @@ public class SalesDetailsServiceImpl implements SalesDetailsService {
     public void delete(SalesDetails salesDetails) {
         salesDetailsRepo.delete(salesDetails);
     }
+
+    @Override
+    @Transactional
+    public List<SalesDetails> findAllBySaleId(Long saleId) {
+        return salesDetailsRepo.findAllBySaleId(saleId);
+    }
 }
